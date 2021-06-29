@@ -16,7 +16,8 @@ namespace HOLD_AND_WRITE
         public static ImageList images = new ImageList();
 
         public static string[] foldersNames = { "Книги", "Места", "Персонажи", "Предметы"};
-        public static string directory = Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().IndexOf("bin")) + "Hold&Write";
+        public static string directory = Directory.GetCurrentDirectory().Substring(0, 
+                                            Directory.GetCurrentDirectory().IndexOf("bin")) + "Hold&Write";
 
         public static string[] textNote;
         public static string[] textSyn;
@@ -25,6 +26,9 @@ namespace HOLD_AND_WRITE
         public static string curDirOfSynoph = "";
 
         public static string charPath;
+
+        public static string[] notepad;
+        public static string[]  synopsis;
 
 
         public enum MainFolders
@@ -57,7 +61,8 @@ namespace HOLD_AND_WRITE
                 curDirOfBook = TreeView.SelectedNode.Name;
                 curDirOfSynoph = TreeView.SelectedNode.Name.Replace(TreeView.SelectedNode.Text, "@_" + TreeView.SelectedNode.Text);
                 Notepad.Text = File.ReadAllText(TreeView.SelectedNode.Name);
-                Synopsis.Text = File.ReadAllText(TreeView.SelectedNode.Name.Replace(TreeView.SelectedNode.Text, "@_" + TreeView.SelectedNode.Text));
+                Synopsis.Text = File.ReadAllText(TreeView.SelectedNode.Name.Replace(TreeView.SelectedNode.Text, 
+                                                                                    "@_" + TreeView.SelectedNode.Text));
             }
             if (TreeView.SelectedNode.Name.Contains("Персонажи") && TreeView.SelectedNode.ImageIndex == 1)
             {
@@ -125,7 +130,8 @@ namespace HOLD_AND_WRITE
                 {
                     if (mainFolderName == foldersNames[(int)MainFolders.Books])
                     {
-                        motherNode.Nodes.Add(GetFileNodes(directory + @"\" + mainFolderName, e.Substring(e.IndexOf(mainFolderName) + mainFolderName.Length + 1)));
+                        motherNode.Nodes.Add(GetFileNodes(directory + @"\" + mainFolderName, 
+                            e.Substring(e.IndexOf(mainFolderName) + mainFolderName.Length + 1)));
                     }
                 }
             }
@@ -300,6 +306,8 @@ namespace HOLD_AND_WRITE
             }
             else
             {
+                notepad = Notepad.Lines;
+                synopsis = Synopsis.Lines;
                 SaveFile_New s = new SaveFile_New();
                 s.ShowDialog();
             }
@@ -428,14 +436,20 @@ namespace HOLD_AND_WRITE
 
         private void Info_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("\"Файловая система\" - это каталог папок \"Книги\",\"Места\",\"Персонажи\" и \"Предметы\". В \"Книги\" входят папки (по имени книги) с файлами текста и синопсиса в формате .txt" +
-                ", в \"Места\",\"Персонажи\" и \"Предметы\" только файлы .txt. При этом, читать файлы \"Книг\" будет удобно и с любого другого текстового редкатора, а файлы \"Мест\",\"Персонажей\" и \"Предметов\" - нет, их оформление заточено под отображение в форме." +
-                "\n\nПоле ввода текста в середине окна - это Основное поле ввода, оно записывает файлы в каталог \"Книги\\Название_книги\\файл.txt, их можно найти в папке \"Hold&Write\" проекта." +
-                "\n\n\"Синопсис\" - это дополнительное поле ввода, файлы \"Синопсиса\" сохраняются вместе с файлами основного поля ввода. Название файлов \"Синопсиса\" состоит из имени файла, к которму пишется синопсис, и добавленными вначало двумя символами - \"@_\".",
+            MessageBox.Show("\"Файловая система\" - это каталог папок \"Книги\",\"Места\",\"Персонажи\" и \"Предметы\". " +
+                "В \"Книги\" входят папки (по имени книги) с файлами текста и синопсиса в формате .txt" +
+                ", в \"Места\",\"Персонажи\" и \"Предметы\" только файлы .txt. При этом, читать файлы \"Книг\"" +
+                " будет удобно и с любого другого текстового редкатора, а файлы \"Мест\",\"Персонажей\" и \"Предметов\" " +
+                "- нет, их оформление заточено под отображение в форме." +
+                "\n\nПоле ввода текста в середине окна - это Основное поле ввода, оно записывает файлы в каталог " +
+                "\"Книги\\Название_книги\\файл.txt, их можно найти в папке \"Hold&Write\" проекта." +
+                "\n\n\"Синопсис\" - это дополнительное поле ввода, файлы \"Синопсиса\" сохраняются вместе " +
+                "с файлами основного поля ввода. Название файлов \"Синопсиса\" состоит из имени файла, к которму " +
+                "пишется синопсис, и добавленными вначало двумя символами - \"@_\".",
                 "Справка", MessageBoxButtons.OK);
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void Refresh(object sender, EventArgs e)
         {
             TreeView.Nodes.Clear();
             SetTreeView();

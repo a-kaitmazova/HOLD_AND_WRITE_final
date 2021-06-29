@@ -39,10 +39,14 @@ namespace HOLD_AND_WRITE
                 if (true)
                 { if (!Directory.Exists(treeViewFiles.SelectedNode.Name + @"\" + textBoxFileName.Text) && textBoxFileName.Text != "Книги")
                     {
+                        /*
                         FileStream fl1 = new FileStream(treeViewFiles.SelectedNode.Name + @"\" + textBoxFileName.Text + ".txt", FileMode.OpenOrCreate);
                         FileStream fl2 = new FileStream(treeViewFiles.SelectedNode.Name + @"\" + "@_" + textBoxFileName.Text + ".txt", FileMode.OpenOrCreate);
 
-                        fl1.Close(); fl2.Close();
+                        fl1.Close(); fl2.Close();*/
+
+                        File.WriteAllLines(treeViewFiles.SelectedNode.Name + @"\" + textBoxFileName.Text + ".txt", HoldAndWrite.notepad);
+                        File.WriteAllLines(treeViewFiles.SelectedNode.Name + @"\" + "@_" + textBoxFileName.Text + ".txt", HoldAndWrite.synopsis);
 
                         treeViewFiles.Nodes.Clear();
                         SetTreeView();
@@ -76,10 +80,13 @@ namespace HOLD_AND_WRITE
             }
             else 
             {
-                MessageBox.Show("Нет книги, в которую можно было бы сохранить! Создайте книгу!","Некуда сохранять",MessageBoxButtons.OK);
-                AddBook a = new AddBook();
-                a.ShowDialog();
-                SetTreeView();
+                DialogResult dr = MessageBox.Show("Нет книги, в которую можно было бы сохранить! Создайте книгу!","Некуда сохранять",MessageBoxButtons.OKCancel);
+                if (dr == DialogResult.OK)
+                { 
+                    AddBook a = new AddBook();
+                    a.ShowDialog();
+                    SetTreeView();
+                }
             }
         }
 
