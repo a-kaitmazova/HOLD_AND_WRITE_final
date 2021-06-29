@@ -159,9 +159,9 @@ namespace HOLD_AND_WRITE
             // 
             // pictureWithoutCard
             // 
-            this.pictureWithoutCard.Location = new System.Drawing.Point(25, 30);
+            this.pictureWithoutCard.Location = new System.Drawing.Point(457, 30);
             this.pictureWithoutCard.Name = "pictureWithoutCard";
-            this.pictureWithoutCard.Size = new System.Drawing.Size(457, 532);
+            this.pictureWithoutCard.Size = new System.Drawing.Size(464, 532);
             this.pictureWithoutCard.TabIndex = 35;
             this.pictureWithoutCard.TabStop = false;
             // 
@@ -248,6 +248,7 @@ namespace HOLD_AND_WRITE
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(945, 588);
+            this.Controls.Add(this.pictureWithoutCard);
             this.Controls.Add(this.checkCameo);
             this.Controls.Add(this.checkMent);
             this.Controls.Add(this.checkSecond);
@@ -266,7 +267,6 @@ namespace HOLD_AND_WRITE
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureWithoutCard);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ChangeChar";
