@@ -41,7 +41,7 @@ namespace HOLD_AND_WRITE
                 MessageBox.Show("Карточка персонажа изменена!", "Изменение", MessageBoxButtons.OK);
             }
             else
-                MessageBox.Show("Персонаж с именем " + textBoxName.Text + " уже существует! Придумайте что-нибудь другоею.", "Уже существует!", MessageBoxButtons.OK);
+                MessageBox.Show("Персонаж с именем " + textBoxName.Text + " уже существует! Придумайте что-нибудь другое.", "Уже существует!", MessageBoxButtons.OK);
             RefreshList();
             CleanCard();
             pictureWithoutCard.Visible = true;
@@ -88,17 +88,17 @@ namespace HOLD_AND_WRITE
                 textBoxName.Text = card[0];
                 switch (card[1])
                 {
-                    case "female": radioGenFem.Checked = true; curGender = "female"; break;
-                    case "male": radioGenMale.Checked = true; curGender = "male"; break;
-                    case "other": radioOther.Checked = true; curGender = "other"; break;
+                    case "female": checkGenFem.Checked = true; curGender = "female"; break;
+                    case "male": checkGenMale.Checked = true; curGender = "male"; break;
+                    case "other": checkOther.Checked = true; curGender = "other"; break;
                 }
                 textBoxAge.Text = card[2];
                 switch (card[3])
                 {
-                    case "main": radioMain.Checked = true; curRole = "main"; break;
-                    case "sec": radioSecond.Checked = true; curRole = "sec"; break;
-                    case "cameo": radioCameo.Checked = true; curRole = "cameo"; break;
-                    case "ment": radioMent.Checked = true; curRole = "ment"; break;
+                    case "main": checkMain.Checked = true; curRole = "main"; break;
+                    case "sec": checkSecond.Checked = true; curRole = "sec"; break;
+                    case "cameo": checkCameo.Checked = true; curRole = "cameo"; break;
+                    case "ment": checkMent.Checked = true; curRole = "ment"; break;
                 }
                 textBoxAbout.Lines = CardText(card, 4);
             }
@@ -125,51 +125,74 @@ namespace HOLD_AND_WRITE
             listCharacters.Items.AddRange(NameList());
         }
 
-        private void radioGenMale_CheckedChanged(object sender, EventArgs e)
+        private void GenMale_CheckedChanged(object sender, EventArgs e)
         {
             curGender = "male";
+            UncheckGen();
+            checkGenMale.Checked = true;
         }
 
-        private void radioGenFem_CheckedChanged(object sender, EventArgs e)
+        private void GenFem_CheckedChanged(object sender, EventArgs e)
         {
             curGender = "female";
+            UncheckGen();
+            checkGenFem.Checked = true;
         }
 
-        private void radioOther_CheckedChanged(object sender, EventArgs e)
+        private void Other_CheckedChanged(object sender, EventArgs e)
         {
             curGender = "other";
+            UncheckRole();
+            checkOther.Checked = false;
         }
 
-        private void radioMain_CheckedChanged(object sender, EventArgs e)
+        private void Main_CheckedChanged(object sender, EventArgs e)
         {
             curRole = "main";
+            UncheckRole();
+            checkMain.Checked = true;
         }
 
-        private void radioSecond_CheckedChanged(object sender, EventArgs e)
+        private void Second_CheckedChanged(object sender, EventArgs e)
         {
             curRole = "sec";
+            UncheckRole();
+            checkSecond.Checked = false;
         }
 
-        private void radioCameo_CheckedChanged(object sender, EventArgs e)
+        private void Cameo_CheckedChanged(object sender, EventArgs e)
         {
             curRole = "cameo";
+            UncheckRole();
+            checkCameo.Checked = false;
         }
 
-        private void radioMent_CheckedChanged(object sender, EventArgs e)
+        private void Ment_CheckedChanged(object sender, EventArgs e)
         {
             curRole = "ment";
+            UncheckRole();
+            checkMent.Checked = false;
         }
 
         public void UncheckRadio()
         {
-            radioGenMale.Checked = false;
-            radioGenFem.Checked = false;
-            radioOther.Checked = false;
+            UncheckGen();
+            UncheckRole();
+        }
 
-            radioMain.Checked = false;
-            radioSecond.Checked = false;
-            radioCameo.Checked = false;
-            radioMent.Checked = false;
+        public void UncheckGen() 
+        {
+            checkGenMale.Checked = false;
+            checkGenFem.Checked = false;
+            checkOther.Checked = false;
+        }
+
+        public void UncheckRole()
+        {
+            checkMain.Checked = false;
+            checkSecond.Checked = false;
+            checkCameo.Checked = false;
+            checkMent.Checked = false;
         }
 
         public void CleanCard()

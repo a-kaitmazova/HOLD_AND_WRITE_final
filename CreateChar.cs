@@ -56,15 +56,26 @@ namespace HOLD_AND_WRITE
 
         public void UncheckRadio()
         {
-            radioGenMale.Checked = false;
-            radioGenFem.Checked = false;
-            radioOther.Checked = false;
+            UncheckRole();
+            UncheckGen();
+        } 
 
-            radioMain.Checked = false;
-            radioSecond.Checked = false;
-            radioCameo.Checked = false;
-            radioMent.Checked = false;
+        public void UncheckGen()
+        {
+            checkGenMale.Checked = false;
+            checkGenFem.Checked = false;
+            checkOther.Checked = false;
         }
+
+        public void UncheckRole()
+        {
+            checkMain.Checked = false;
+            checkSecond.Checked = false;
+            checkCameo.Checked = false;
+            checkMent.Checked = false;
+            checkMent.Checked = false;
+        }
+
 
         public void CleanCard()
         {
@@ -81,40 +92,53 @@ namespace HOLD_AND_WRITE
             this.Close();
         }
 
-        private void radioGenMale_CheckedChanged(object sender, EventArgs e)
+        private void GenMale_CheckedChanged(object sender, EventArgs e)
         {
             curGender = "male";
+            UncheckGen();
+            checkGenMale.Checked = true;
         }
 
-        private void radioGenFem_CheckedChanged(object sender, EventArgs e)
+        private void GenFem_CheckedChanged(object sender, EventArgs e)
         {
             curGender = "female";
+            UncheckGen();
+            checkGenFem.Checked = true;
         }
 
-        private void radioOther_CheckedChanged(object sender, EventArgs e)
+        private void Other_CheckedChanged(object sender, EventArgs e)
         {
             curGender = "other";
+            UncheckGen();
+            checkOther.Checked = true;
         }
 
-        private void radioMain_CheckedChanged(object sender, EventArgs e)
+        private void Main_CheckedChanged(object sender, EventArgs e)
         {
             curRole = "main";
+            UncheckRole();
+            checkMain.Checked = true;
         }
 
-        private void radioSecond_CheckedChanged(object sender, EventArgs e)
+        private void Second_CheckedChanged(object sender, EventArgs e)
         {
             curRole = "sec";
+            UncheckRole();
+            checkSecond.Checked = true;
         }
 
-        private void radioCameo_CheckedChanged(object sender, EventArgs e)
+        private void Cameo_CheckedChanged(object sender, EventArgs e)
         {
             curRole = "cameo";
+            UncheckRole();
+            checkCameo.Checked = true;
         }
 
-        private void radioMent_CheckedChanged(object sender, EventArgs e)
+        private void Ment_CheckedChanged(object sender, EventArgs e)
         {
             curRole = "ment";
+            UncheckRole();
+            checkMent.Checked = true;
         }
-
     }
 }

@@ -111,7 +111,6 @@ namespace HOLD_AND_WRITE
             TreeView.BeginUpdate();
 
             TreeView.Nodes.Add(GetNode(foldersNames[(int)MainFolders.Books]));
-
             TreeView.Nodes.Add(GetNode(foldersNames[(int)MainFolders.Places]));
             TreeView.Nodes.Add(GetNode(foldersNames[(int)MainFolders.Characters]));
             TreeView.Nodes.Add(GetNode(foldersNames[(int)MainFolders.Items]));

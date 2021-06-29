@@ -38,15 +38,15 @@ namespace HOLD_AND_WRITE
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxAge = new System.Windows.Forms.TextBox();
             this.textBoxAbout = new System.Windows.Forms.TextBox();
-            this.radioGenFem = new System.Windows.Forms.RadioButton();
-            this.radioGenMale = new System.Windows.Forms.RadioButton();
-            this.radioSecond = new System.Windows.Forms.RadioButton();
-            this.radioMain = new System.Windows.Forms.RadioButton();
-            this.radioCameo = new System.Windows.Forms.RadioButton();
-            this.radioMent = new System.Windows.Forms.RadioButton();
             this.buttonCancelSaveChar = new System.Windows.Forms.Button();
             this.buttonSaveChar = new System.Windows.Forms.Button();
-            this.radioOther = new System.Windows.Forms.RadioButton();
+            this.checkGenFem = new System.Windows.Forms.CheckBox();
+            this.checkGenMale = new System.Windows.Forms.CheckBox();
+            this.checkOther = new System.Windows.Forms.CheckBox();
+            this.checkMain = new System.Windows.Forms.CheckBox();
+            this.checkSecond = new System.Windows.Forms.CheckBox();
+            this.checkMent = new System.Windows.Forms.CheckBox();
+            this.checkCameo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -122,84 +122,6 @@ namespace HOLD_AND_WRITE
             this.textBoxAbout.Size = new System.Drawing.Size(363, 173);
             this.textBoxAbout.TabIndex = 7;
             // 
-            // radioGenFem
-            // 
-            this.radioGenFem.AutoSize = true;
-            this.radioGenFem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.radioGenFem.Location = new System.Drawing.Point(115, 89);
-            this.radioGenFem.Name = "radioGenFem";
-            this.radioGenFem.Size = new System.Drawing.Size(90, 24);
-            this.radioGenFem.TabIndex = 8;
-            this.radioGenFem.TabStop = true;
-            this.radioGenFem.Text = "женский";
-            this.radioGenFem.UseVisualStyleBackColor = true;
-            this.radioGenFem.CheckedChanged += new System.EventHandler(this.radioGenFem_CheckedChanged);
-            // 
-            // radioGenMale
-            // 
-            this.radioGenMale.AutoSize = true;
-            this.radioGenMale.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.radioGenMale.Location = new System.Drawing.Point(221, 89);
-            this.radioGenMale.Name = "radioGenMale";
-            this.radioGenMale.Size = new System.Drawing.Size(91, 24);
-            this.radioGenMale.TabIndex = 9;
-            this.radioGenMale.TabStop = true;
-            this.radioGenMale.Text = "мужской";
-            this.radioGenMale.UseVisualStyleBackColor = true;
-            this.radioGenMale.CheckedChanged += new System.EventHandler(this.radioGenMale_CheckedChanged);
-            // 
-            // radioSecond
-            // 
-            this.radioSecond.AutoSize = true;
-            this.radioSecond.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.radioSecond.Location = new System.Drawing.Point(111, 234);
-            this.radioSecond.Name = "radioSecond";
-            this.radioSecond.Size = new System.Drawing.Size(148, 24);
-            this.radioSecond.TabIndex = 10;
-            this.radioSecond.TabStop = true;
-            this.radioSecond.Text = "Второстепенный";
-            this.radioSecond.UseVisualStyleBackColor = true;
-            this.radioSecond.CheckedChanged += new System.EventHandler(this.radioSecond_CheckedChanged);
-            // 
-            // radioMain
-            // 
-            this.radioMain.AutoSize = true;
-            this.radioMain.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.radioMain.Location = new System.Drawing.Point(111, 193);
-            this.radioMain.Name = "radioMain";
-            this.radioMain.Size = new System.Drawing.Size(90, 24);
-            this.radioMain.TabIndex = 11;
-            this.radioMain.TabStop = true;
-            this.radioMain.Text = "Главный";
-            this.radioMain.UseVisualStyleBackColor = true;
-            this.radioMain.CheckedChanged += new System.EventHandler(this.radioMain_CheckedChanged);
-            // 
-            // radioCameo
-            // 
-            this.radioCameo.AutoSize = true;
-            this.radioCameo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.radioCameo.Location = new System.Drawing.Point(268, 193);
-            this.radioCameo.Name = "radioCameo";
-            this.radioCameo.Size = new System.Drawing.Size(138, 24);
-            this.radioCameo.TabIndex = 12;
-            this.radioCameo.TabStop = true;
-            this.radioCameo.Text = "Эпизодический";
-            this.radioCameo.UseVisualStyleBackColor = true;
-            this.radioCameo.CheckedChanged += new System.EventHandler(this.radioCameo_CheckedChanged);
-            // 
-            // radioMent
-            // 
-            this.radioMent.AutoSize = true;
-            this.radioMent.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.radioMent.Location = new System.Drawing.Point(268, 234);
-            this.radioMent.Name = "radioMent";
-            this.radioMent.Size = new System.Drawing.Size(123, 24);
-            this.radioMent.TabIndex = 13;
-            this.radioMent.TabStop = true;
-            this.radioMent.Text = "Упоминается";
-            this.radioMent.UseVisualStyleBackColor = true;
-            this.radioMent.CheckedChanged += new System.EventHandler(this.radioMent_CheckedChanged);
-            // 
             // buttonCancelSaveChar
             // 
             this.buttonCancelSaveChar.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -222,18 +144,82 @@ namespace HOLD_AND_WRITE
             this.buttonSaveChar.UseVisualStyleBackColor = true;
             this.buttonSaveChar.Click += new System.EventHandler(this.SaveChar_Click);
             // 
-            // radioOther
+            // checkGenFem
             // 
-            this.radioOther.AutoSize = true;
-            this.radioOther.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.radioOther.Location = new System.Drawing.Point(329, 89);
-            this.radioOther.Name = "radioOther";
-            this.radioOther.Size = new System.Drawing.Size(77, 24);
-            this.radioOther.TabIndex = 16;
-            this.radioOther.TabStop = true;
-            this.radioOther.Text = "другое";
-            this.radioOther.UseVisualStyleBackColor = true;
-            this.radioOther.CheckedChanged += new System.EventHandler(this.radioOther_CheckedChanged);
+            this.checkGenFem.AutoSize = true;
+            this.checkGenFem.Location = new System.Drawing.Point(118, 93);
+            this.checkGenFem.Name = "checkGenFem";
+            this.checkGenFem.Size = new System.Drawing.Size(85, 21);
+            this.checkGenFem.TabIndex = 17;
+            this.checkGenFem.Text = "женский";
+            this.checkGenFem.UseVisualStyleBackColor = true;
+            this.checkGenFem.Click += new System.EventHandler(this.GenFem_CheckedChanged);
+            // 
+            // checkGenMale
+            // 
+            this.checkGenMale.AutoSize = true;
+            this.checkGenMale.Location = new System.Drawing.Point(217, 93);
+            this.checkGenMale.Name = "checkGenMale";
+            this.checkGenMale.Size = new System.Drawing.Size(85, 21);
+            this.checkGenMale.TabIndex = 18;
+            this.checkGenMale.Text = "мужской";
+            this.checkGenMale.UseVisualStyleBackColor = true;
+            this.checkGenMale.Click += new System.EventHandler(this.GenMale_CheckedChanged);
+            // 
+            // checkOther
+            // 
+            this.checkOther.AutoSize = true;
+            this.checkOther.Location = new System.Drawing.Point(316, 93);
+            this.checkOther.Name = "checkOther";
+            this.checkOther.Size = new System.Drawing.Size(74, 21);
+            this.checkOther.TabIndex = 20;
+            this.checkOther.Text = "другое";
+            this.checkOther.UseVisualStyleBackColor = true;
+            this.checkOther.Click += new System.EventHandler(this.Other_CheckedChanged);
+            // 
+            // checkMain
+            // 
+            this.checkMain.AutoSize = true;
+            this.checkMain.Location = new System.Drawing.Point(111, 192);
+            this.checkMain.Name = "checkMain";
+            this.checkMain.Size = new System.Drawing.Size(87, 21);
+            this.checkMain.TabIndex = 21;
+            this.checkMain.Text = "Главный";
+            this.checkMain.UseVisualStyleBackColor = true;
+            this.checkMain.Click += new System.EventHandler(this.Main_CheckedChanged);
+            // 
+            // checkSecond
+            // 
+            this.checkSecond.AutoSize = true;
+            this.checkSecond.Location = new System.Drawing.Point(111, 231);
+            this.checkSecond.Name = "checkSecond";
+            this.checkSecond.Size = new System.Drawing.Size(142, 21);
+            this.checkSecond.TabIndex = 22;
+            this.checkSecond.Text = "Второстепенный";
+            this.checkSecond.UseVisualStyleBackColor = true;
+            this.checkSecond.Click += new System.EventHandler(this.Second_CheckedChanged);
+            // 
+            // checkMent
+            // 
+            this.checkMent.AutoSize = true;
+            this.checkMent.Location = new System.Drawing.Point(268, 231);
+            this.checkMent.Name = "checkMent";
+            this.checkMent.Size = new System.Drawing.Size(118, 21);
+            this.checkMent.TabIndex = 23;
+            this.checkMent.Text = "Упоминается";
+            this.checkMent.UseVisualStyleBackColor = true;
+            this.checkMent.Click += new System.EventHandler(this.Ment_CheckedChanged);
+            // 
+            // checkCameo
+            // 
+            this.checkCameo.AutoSize = true;
+            this.checkCameo.Location = new System.Drawing.Point(268, 192);
+            this.checkCameo.Name = "checkCameo";
+            this.checkCameo.Size = new System.Drawing.Size(132, 21);
+            this.checkCameo.TabIndex = 24;
+            this.checkCameo.Text = "Эпизодический";
+            this.checkCameo.UseVisualStyleBackColor = true;
+            this.checkCameo.Click += new System.EventHandler(this.Cameo_CheckedChanged);
             // 
             // CreateChar
             // 
@@ -241,15 +227,15 @@ namespace HOLD_AND_WRITE
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(449, 591);
-            this.Controls.Add(this.radioOther);
+            this.Controls.Add(this.checkCameo);
+            this.Controls.Add(this.checkMent);
+            this.Controls.Add(this.checkSecond);
+            this.Controls.Add(this.checkMain);
+            this.Controls.Add(this.checkOther);
+            this.Controls.Add(this.checkGenMale);
+            this.Controls.Add(this.checkGenFem);
             this.Controls.Add(this.buttonSaveChar);
             this.Controls.Add(this.buttonCancelSaveChar);
-            this.Controls.Add(this.radioMent);
-            this.Controls.Add(this.radioCameo);
-            this.Controls.Add(this.radioMain);
-            this.Controls.Add(this.radioSecond);
-            this.Controls.Add(this.radioGenMale);
-            this.Controls.Add(this.radioGenFem);
             this.Controls.Add(this.textBoxAbout);
             this.Controls.Add(this.textBoxAge);
             this.Controls.Add(this.textBoxName);
@@ -277,14 +263,14 @@ namespace HOLD_AND_WRITE
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxAge;
         private System.Windows.Forms.TextBox textBoxAbout;
-        private System.Windows.Forms.RadioButton radioGenFem;
-        private System.Windows.Forms.RadioButton radioGenMale;
-        private System.Windows.Forms.RadioButton radioSecond;
-        private System.Windows.Forms.RadioButton radioMain;
-        private System.Windows.Forms.RadioButton radioCameo;
-        private System.Windows.Forms.RadioButton radioMent;
         private System.Windows.Forms.Button buttonCancelSaveChar;
         private System.Windows.Forms.Button buttonSaveChar;
-        private System.Windows.Forms.RadioButton radioOther;
+        private System.Windows.Forms.CheckBox checkGenFem;
+        private System.Windows.Forms.CheckBox checkGenMale;
+        private System.Windows.Forms.CheckBox checkOther;
+        private System.Windows.Forms.CheckBox checkMain;
+        private System.Windows.Forms.CheckBox checkSecond;
+        private System.Windows.Forms.CheckBox checkMent;
+        private System.Windows.Forms.CheckBox checkCameo;
     }
 }
