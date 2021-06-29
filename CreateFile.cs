@@ -37,9 +37,6 @@ namespace HOLD_AND_WRITE
 
                     fl1.Close(); fl2.Close();
 
-                    // File.Create(treeViewFiles.SelectedNode.Name + @"\" + textBoxFileName.Text + ".txt").Close();
-                    // File.Create(treeViewFiles.SelectedNode.Name + @"\" + "@_" + textBoxFileName.Text + ".txt").;
-
                     treeViewFiles.Nodes.Clear();
                     SetTreeView();
                     treeViewFiles.ExpandAll();
