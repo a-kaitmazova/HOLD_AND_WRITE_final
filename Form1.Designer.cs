@@ -58,6 +58,7 @@
             this.Notepad = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TreeView = new System.Windows.Forms.TreeView();
+            this.оБНОВИТЬToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,12 +71,14 @@
             this.персонажToolStripMenuItem,
             this.местностьToolStripMenuItem,
             this.предметToolStripMenuItem,
-            this.Info});
+            this.Info,
+            this.оБНОВИТЬToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1741, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1741, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // книгаToolStripMenuItem
             // 
@@ -84,7 +87,7 @@
             this.переименоватьToolStripMenuItem,
             this.удалитьToolStripMenuItem1});
             this.книгаToolStripMenuItem.Name = "книгаToolStripMenuItem";
-            this.книгаToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.книгаToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
             this.книгаToolStripMenuItem.Text = "Книга";
             // 
             // создатьToolStripMenuItem
@@ -116,7 +119,7 @@
             this.переименоватьToolStripMenuItem1,
             this.удалитьToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // сохранитьToolStripMenuItem1
@@ -154,7 +157,7 @@
             this.изменитьToolStripMenuItem,
             this.удалитьToolStripMenuItem2});
             this.персонажToolStripMenuItem.Name = "персонажToolStripMenuItem";
-            this.персонажToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
+            this.персонажToolStripMenuItem.Size = new System.Drawing.Size(95, 26);
             this.персонажToolStripMenuItem.Text = "Персонаж";
             // 
             // создатьToolStripMenuItem2
@@ -185,7 +188,7 @@
             this.изменитьToolStripMenuItem1,
             this.удалитьToolStripMenuItem3});
             this.местностьToolStripMenuItem.Name = "местностьToolStripMenuItem";
-            this.местностьToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
+            this.местностьToolStripMenuItem.Size = new System.Drawing.Size(96, 26);
             this.местностьToolStripMenuItem.Text = "Местность";
             // 
             // создатьToolStripMenuItem3
@@ -216,7 +219,7 @@
             this.изменитьToolStripMenuItem2,
             this.удалитьToolStripMenuItem4});
             this.предметToolStripMenuItem.Name = "предметToolStripMenuItem";
-            this.предметToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.предметToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
             this.предметToolStripMenuItem.Text = "Предмет";
             // 
             // создатьToolStripMenuItem4
@@ -243,7 +246,7 @@
             // Info
             // 
             this.Info.Name = "Info";
-            this.Info.Size = new System.Drawing.Size(81, 24);
+            this.Info.Size = new System.Drawing.Size(81, 26);
             this.Info.Text = "Справка";
             this.Info.Click += new System.EventHandler(this.Info_Click);
             // 
@@ -309,6 +312,13 @@
             this.TreeView.Name = "TreeView";
             this.TreeView.Size = new System.Drawing.Size(368, 752);
             this.TreeView.TabIndex = 8;
+            this.TreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OpenFile);
+            // 
+            // оБНОВИТЬToolStripMenuItem
+            // 
+            this.оБНОВИТЬToolStripMenuItem.Name = "оБНОВИТЬToolStripMenuItem";
+            this.оБНОВИТЬToolStripMenuItem.Size = new System.Drawing.Size(102, 26);
+            this.оБНОВИТЬToolStripMenuItem.Text = "ОБНОВИТЬ";
             // 
             // HoldAndWrite
             // 
@@ -368,6 +378,7 @@
         private System.Windows.Forms.RichTextBox Notepad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TreeView TreeView;
+        private System.Windows.Forms.ToolStripMenuItem оБНОВИТЬToolStripMenuItem;
     }
 }
 

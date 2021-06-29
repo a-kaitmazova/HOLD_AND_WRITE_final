@@ -434,5 +434,16 @@ namespace HOLD_AND_WRITE
                 "\n\n\"Синопсис\" - это дополнительное поле ввода, файлы \"Синопсиса\" сохраняются вместе с файлами основного поля ввода. Название файлов \"Синопсиса\" состоит из имени файла, к которму пишется синопсис, и добавленными вначало двумя символами - \"@_\".",
                 "Справка", MessageBoxButtons.OK);
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            TreeView.Nodes.Clear();
+            SetTreeView();
+            TreeView.ExpandAll();
+
+            labelName.Text = "";
+            Notepad.Text = "";
+            Synopsis.Text = "";
+        }
     }
 }
