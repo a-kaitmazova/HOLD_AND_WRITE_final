@@ -24,8 +24,23 @@ namespace HOLD_AND_WRITE
 
         private void RenameBook_Click(object sender, EventArgs e)
         {
-            Directory.CreateDirectory(HoldAndWrite.directory + @"\" + HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books] + @"\" + textRenameBookName.Text);
-            Directory.Delete(HoldAndWrite.directory + @"\" + HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books] + @"\" + listBooks.Items[listBooks.SelectedIndex].ToString());
+            string newNameDir = HoldAndWrite.directory + @"\" + HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books] + 
+                @"\" + textRenameBookName.Text;
+            string oldNameDir = HoldAndWrite.directory + @"\" + HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books] + 
+                @"\" + listBooks.Items[listBooks.SelectedIndex].ToString();
+
+            Directory.CreateDirectory(newNameDir);
+
+            if (Directory.GetFiles(oldNameDir).Length > 0)
+            { 
+                foreach (var y in Directory.GetFiles(oldNameDir))
+                {
+                    File.Move(y, newNameDir + @"\" + y.Substring(y.IndexOf(oldNameDir) + oldNameDir.Length));
+                } 
+            }
+
+            Directory.Delete(oldNameDir);
+
             listBooks.Items.Clear();
             SetListBox();
         }
@@ -37,12 +52,13 @@ namespace HOLD_AND_WRITE
 
         public void SetListBox()
         {
-            foreach(var e in Directory.GetDirectories(HoldAndWrite.directory + @"\" + HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books]))
+            foreach(var e in Directory.GetDirectories(HoldAndWrite.directory + @"\" + 
+                HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books]))
             {
-                listBooks.Items.Add(e.Substring(e.IndexOf(HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books]) + HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books].Length + 1));
+                listBooks.Items.Add(e.Substring(e.IndexOf(HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books]) + 
+                    HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books].Length + 1));
             }   
         }
-
         private void SelectedBookName(object sender, EventArgs e)
         {
             textRenameBookName.Text = listBooks.Items[listBooks.SelectedIndex].ToString();
