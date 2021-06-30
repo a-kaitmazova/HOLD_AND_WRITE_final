@@ -143,39 +143,5 @@ namespace HOLD_AND_WRITE
             if (treeViewFiles.SelectedNode.ImageIndex == 2 || treeViewFiles.SelectedNode.SelectedImageIndex == 2)
                 textBoxRenameFile.Text = treeViewFiles.SelectedNode.Text.Replace(".txt", "");
         }
-
-        /*
-                    using (StreamWriter fl2 = new StreamWriter(newSynDirectory, false))
-                    {
-                        foreach (var g in File.ReadAllLines(oldSynDirectory))
-                        {
-                            fl2.WriteLine(g);
-                        }
-                    }
-                    
-                     using (StreamWriter fl1 = new StreamWriter(newBookDirectory, false))
-                    {
-                        foreach (var y in File.ReadAllLines(oldBookDirectory))
-                        {
-                            fl1.WriteLine(y);
-                        }
-                    }
-                    //--------------------------------------------------------------------
-                    using (StreamWriter sw = File.CreateText(newBookDirectory))
-                    {
-                        foreach (var s in File.ReadAllLines(oldBookDirectory))
-                        {
-                            sw.WriteLine(s);
-                        }
-                    }
-
-                    using (StreamWriter sw = File.CreateText(newSynDirectory))
-                    {
-                        foreach (var s in File.ReadAllLines(oldSynDirectory))
-                        {
-                            sw.WriteLine(s);
-                        }
-                    } 
-                    */
     }
 }
