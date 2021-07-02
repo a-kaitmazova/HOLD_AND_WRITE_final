@@ -24,6 +24,8 @@ namespace HOLD_AND_WRITE
 
         private void RenameBook_Click(object sender, EventArgs e)
         {
+          if (listBooks.SelectedItem != null)
+          {
             string newNameDir = HoldAndWrite.directory + @"\" + HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books] + 
                 @"\" + textRenameBookName.Text;
             string oldNameDir = HoldAndWrite.directory + @"\" + HoldAndWrite.foldersNames[(int)HoldAndWrite.MainFolders.Books] + 
@@ -43,6 +45,7 @@ namespace HOLD_AND_WRITE
 
             listBooks.Items.Clear();
             SetListBox();
+          }
         }
 
         private void CancelBook_Click(object sender, EventArgs e)
